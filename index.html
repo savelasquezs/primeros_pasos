@@ -11,6 +11,7 @@
 <body>
     <div id="app">
 
+
     </div>
 
 
@@ -20,14 +21,14 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    img: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    count: 0
                 }
 
             },
             template: `
-            <img v-bind="{'src':img, 'alt':img}">
-           
-            
+            <button v-on:click="count--">-</button>
+            <h3>{{count}}</h3>
+            <button v-on:click="count++">+</button>
             `
         }).mount("#app")
         console.log(vm)
