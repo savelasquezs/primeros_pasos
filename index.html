@@ -10,7 +10,7 @@
 
 <body>
     <div id="app">
-        {{text}}
+
     </div>
 
 
@@ -22,7 +22,12 @@
                 return {
                     text: "santi es el mejor developer de todos los tiempos"
                 }
-            }
+
+            },
+            template: `
+            <h3>Definitivamente {{text}} </h3>
+            
+            `
         }).mount("#app")
     </script>
 </body>
