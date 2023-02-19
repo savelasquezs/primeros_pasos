@@ -21,19 +21,21 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    count: 0
+                    text: "Maria la loca"
                 }
 
             },
             methods: {
                 increment() {
                     this.count += 1
+                },
+                changetext(e) {
+                    this.text = e.target.value
                 }
             },
             template: `
-           <form v-on:submit.prevent="increment">
-               <button>{{count}}</button>
-           </form>
+            <h3>{{text}}</h3>
+            <input type="text" @input="changetext" :value="text">
            
             `,
 
