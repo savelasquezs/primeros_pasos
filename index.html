@@ -29,13 +29,12 @@
                 increment() {
                     this.count += 1
                 },
-                changetext(e) {
-                    this.text = e.target.value
-                }
+
             },
             template: `
             <h3>{{text}}</h3>
-            <input type="text" @input="changetext" :value="text">
+            <input type="text" v-model="text">
+            <h2>{{text}}</h2>
            
             `,
 
