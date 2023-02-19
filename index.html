@@ -17,18 +17,20 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
 
-        Vue.createApp({
+        const vm = Vue.createApp({
             data() {
                 return {
-                    text: "santi es el mejor developer de todos los tiempos"
+                    img: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
                 }
 
             },
             template: `
-            <h3 v-text="text"></h3>
+            <img v-bind="{'src':img, 'alt':img}">
+           
             
             `
         }).mount("#app")
+        console.log(vm)
     </script>
 </body>
 
