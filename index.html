@@ -25,11 +25,18 @@
                 }
 
             },
+            methods: {
+                increment() {
+                    this.count += 1
+                }
+            },
             template: `
-            <button v-on:click="count--">-</button>
-            <h3>{{count}}</h3>
-            <button v-on:click="count++">+</button>
-            `
+           <form v-on:submit.prevent="increment">
+               <button>{{count}}</button>
+           </form>
+           
+            `,
+
         }).mount("#app")
         console.log(vm)
     </script>
