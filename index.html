@@ -46,7 +46,24 @@
                     date: new Date(),
                     open: false,
                     text: "La puerta esta cerrada",
-                    username: ""
+                    username: "",
+                    lista: [
+                        {
+                            title: "titulo1",
+                            parrafo: "parrafo21"
+                        },
+                        {
+                            title: "titulo2",
+                            parrafo: "parrafo21"
+                        }, {
+                            title: "titulo3",
+                            parrafo: "parrafo21"
+                        }, {
+                            title: "titulo4",
+                            parrafo: "parrafo21"
+                        },
+
+                    ]
                 }
 
             },
@@ -91,6 +108,14 @@
                 <h3>{{text}}</h3>
                 <h3 v-if="open">
                     <p>Hola {{username}}</p>
+
+                    <div class="list">
+                        <div class="item" v-for="item in lista">
+                            <h4>{{item.title}}</h4>
+                            <p>l{{item.parrafo}}</p>
+
+                        </div>
+                    </div>
                     Cierra Sesion</h3>
                 <h3 v-else>
                     <label>Username</label>
