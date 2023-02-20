@@ -21,7 +21,9 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    text: "Maria la loca"
+                    nombre: "Santiago",
+                    apellido: "Velásquez",
+                    date: new Date()
                 }
 
             },
@@ -31,10 +33,23 @@
                 },
 
             },
-            template: `
-            <h3>{{text}}</h3>
-            <input type="text" v-model="text">
-            <h2>{{text}}</h2>
+            computed: {
+                fullName() {
+                    return this.nombre + " " + this.apellido
+                },
+                fullDate() {
+                    return this.date.toLocaleDateString()
+                }
+
+            },
+            template:
+                /*html*/
+                `
+            <h2> {{fullName}}</h2>
+            <h2> {{fullDate}}</h2>
+
+
+            
            
             `,
 
