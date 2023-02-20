@@ -7,6 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+
+    }
+
+    .opened {
+        background-color: greenyellow;
+    }
+
+    .closed {
+        background-color: brown;
+    }
+</style>
 
 <body>
     <div id="app">
@@ -53,19 +73,22 @@
                 },
                 fullDate() {
                     return this.date.toLocaleDateString()
+                },
+                divStyle() {
+                    return this.open ? "opened" : "closed"
                 }
 
             },
             template:
                 /*html*/
                 `
-            <h2> {{fullName}}</h2>
-            <h2> {{fullDate}}</h2>
-            <h3>{{text}}</h3>
-            <button @click="open=!open">{{open?"cerrar":"abrir"}}</button>
 
-
-            
+            <div :class="divStyle">
+                <h2> {{fullName}}</h2>
+                <h2> {{fullDate}}</h2>
+                <h3>{{text}}</h3>
+                <button @click="open=!open">{{open?"cerrar":"abrir"}}</button>
+            </div>    
            
             `,
 
