@@ -23,7 +23,9 @@
                 return {
                     nombre: "Santiago",
                     apellido: "Velásquez",
-                    date: new Date()
+                    date: new Date(),
+                    open: false,
+                    text: "La puerta esta cerrada"
                 }
 
             },
@@ -32,6 +34,18 @@
                     this.count += 1
                 },
 
+            },
+            watch: {
+                nombre(newval, oldval) {
+                    console.log(`el viejo valor era ${oldval} y ahora es ${newval}`)
+                },
+                open(newval) {
+                    if (newval) {
+                        this.text = "La puerta esta abierta"
+                    } else {
+                        this.text = "La puerta esta cerrada"
+                    }
+                }
             },
             computed: {
                 fullName() {
@@ -47,6 +61,8 @@
                 `
             <h2> {{fullName}}</h2>
             <h2> {{fullDate}}</h2>
+            <h3>{{text}}</h3>
+            <button @click="open=!open">{{open?"cerrar":"abrir"}}</button>
 
 
             
